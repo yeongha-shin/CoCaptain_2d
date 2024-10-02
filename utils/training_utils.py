@@ -555,6 +555,7 @@ def get_eval_distance_errors(all_pred, all_label, pattern):
     return distance_errors
 
 
+# 예측된 결과와 실제 레이블 사이의 오차를 계산하는 부분 
 def eval_action(all_pred, all_label):
     accumulated_error_lon = 0.0
     accumulated_error_lat = 0.0
@@ -584,8 +585,9 @@ def eval_action(all_pred, all_label):
         average_error_lat = accumulated_error_lat / total_number
     return average_error_lon, average_error_lat
 
-
+# llama 토큰 시퀀스를 사람이 읽을수 잇는 데이터로 디코딩 하는 역할이다
 def decode_generation_seqeunces(tokenizer, token_sequences):
+    # -100하는건 패딩 토큰을 제외해서
     token_sequences = np.where(
         token_sequences != -100, token_sequences, tokenizer.pad_token_id
     )

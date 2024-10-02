@@ -81,7 +81,9 @@ class RouteField(IntEnum):
     IS_GIVEWAY = 15
     IS_ROUNDABOUT = 16
 
+
 # 자선에 대한 정보도 enum으로 생성함
+# 31개 필드
 class EgoField(IntEnum):
     ACCEL = 0
     SPEED = 1
