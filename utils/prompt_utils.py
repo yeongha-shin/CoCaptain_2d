@@ -42,6 +42,7 @@ def make_observation_prompt(  # pylint: disable=too-many-locals,too-many-stateme
     attention=False,
 ):
 
+
     # 딕셔너리라 VectorObservation 객체로 변환한다
     if isinstance(obs, dict):
         obs = VectorObservation(**obs)

@@ -130,11 +130,13 @@ def get_train_val_data(
 
 
 def generate_and_tokenize_prompt(tokenizer, data_point, user_input_ids=False):
+
     full_prompt = generate_prompt(data_point)
 
     tokenized_full_prompt = tokenize(tokenizer, full_prompt)
 
     user_prompt = generate_prompt({**data_point, "output": ""})
+
     tokenized_user_prompt = tokenize(tokenizer, user_prompt, add_eos_token=False)
     user_prompt_len = len(tokenized_user_prompt["input_ids"])
 
@@ -555,7 +557,7 @@ def get_eval_distance_errors(all_pred, all_label, pattern):
     return distance_errors
 
 
-# 예측된 결과와 실제 레이블 사이의 오차를 계산하는 부분 
+# 예측된 결과와 실제 레이블 사이의 오차를 계산하는 부분
 def eval_action(all_pred, all_label):
     accumulated_error_lon = 0.0
     accumulated_error_lat = 0.0

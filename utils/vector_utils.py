@@ -59,6 +59,7 @@ class PedestrianField(IntEnum):
     Z = 4
     DX = 5
     DY = 6
+    UNKNOWN = 7,
     CROSSING = 8
 
 # 길에 대한 정보도 enum으로 생성함
@@ -95,6 +96,9 @@ class EgoField(IntEnum):
     HALF_HEIGHT = 7
     UNSPECIFIED_8 = 8
     CLASS_START = 9
+    UNKNOWN_0 = 10
+    UNKNOWN_1 = 11
+    UNKNOWN_2 = 12
     CLASS_END = 13
     DYNAMICS_START = 14
     DYNAMICS_END = 15
